@@ -1,25 +1,22 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from 'vue-router';
+// import HelloWorld from './components/HelloWorld.vue';
 </script>
 
 <template>
+  <!-- 觀察你的設計稿 把共用的部分放在此頁面 -->
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <RouterLink to="/">home</RouterLink>
+    <RouterLink to="/about">about</RouterLink>
+    <RouterLink to="/calc">calc</RouterLink>
   </header>
-
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
+  <footer></footer>
 </template>
 
+<!-- scoped style只影響這支vue -->
 <style scoped>
 header {
   line-height: 1.5;
