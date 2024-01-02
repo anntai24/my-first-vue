@@ -1,14 +1,25 @@
-<script setup>
+<!-- <script setup> =>寫給composition的寫法 -->
+<!-- 現在是options寫法 -->
+<script>
 import { RouterLink, RouterView } from 'vue-router';
-// import HelloWorld from './components/HelloWorld.vue';
+// options寫法一定會有export default
+export default {
+  components: {
+    // RouterLink,
+    RouterView,
+  },
+};
 </script>
 
 <template>
   <!-- 觀察你的設計稿 把共用的部分放在此頁面 -->
   <header>
-    <RouterLink to="/">home</RouterLink>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+    <a href="/calc">calc</a>
+    <!-- <RouterLink to="/">home</RouterLink>
     <RouterLink to="/about">about</RouterLink>
-    <RouterLink to="/calc">calc</RouterLink>
+    <RouterLink to="/calc">calc</RouterLink> -->
   </header>
   <main>
     <RouterView />
@@ -16,7 +27,8 @@ import { RouterLink, RouterView } from 'vue-router';
   <footer></footer>
 </template>
 
-<!-- scoped style只影響這支vue -->
+<!-- scoped: 目的是為了不要影響到其他區塊的style -->
+<!-- <style scoped> 只影響這支vue -->
 <style scoped>
 header {
   line-height: 1.5;
