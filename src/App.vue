@@ -23,6 +23,7 @@ export default {
   </header>
   <main>
     <RouterView />
+    <div class="calc text-[96px]">我來自公版</div>
   </main>
   <footer></footer>
 </template>
