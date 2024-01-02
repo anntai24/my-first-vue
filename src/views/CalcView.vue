@@ -1,5 +1,13 @@
 <script>
+// 引入元件
+import MyButton from '@/components/customButton/MyButton.vue';
+
 export default {
+  // 宣告即將用到的元件
+  components: {
+    MyButton,
+  },
+
   // 放置所有變數的位置
   data() {
     return {
@@ -62,10 +70,17 @@ export default {
     </div>
 
     <div class="btns">
-      <button class="btn" type="button" @click="add()">+</button>
-      <button class="btn" type="button">-</button>
+      <!-- 方法一 原寫法 -->
+      <!-- <button class="btn" type="button" @click="add()">+</button> -->
+      <!-- <button class="btn" type="button">-</button>
       <button class="btn" type="button">*</button>
-      <button class="btn" type="button">/</button>
+      <button class="btn" type="button">/</button> -->
+
+      <!--方法二 引用component寫法 -->
+      <MyButton @click="add()">+</MyButton>
+      <MyButton @click="add()">-</MyButton>
+      <MyButton @click="add()">*</MyButton>
+      <MyButton @click="add()">/</MyButton>
     </div>
 
     <div class="output text-main-deep">輸出結果: {{ result }}</div>
@@ -73,8 +88,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.calc {
-}
+// .calc {
+// }
 
 .btns {
   /* 原本寫法
@@ -85,12 +100,14 @@ export default {
   // tailwind寫法\\
   @apply flex gap-[30px];
 
+  /*  改寫到component中的MyButton.vue裡面
   .btn {
-    @apply border border-black border-[3px] px-[10px] py-[5px] hover:text-[blue] bg-main-deep;
+    @apply border-black border-[3px] px-[10px] py-[5px] hover:text-[blue] bg-main-deep;
 
-    /* 原本寫法
+    // 原本寫法\\
     padding: 5px 10px;
-    */
+    
   }
+  */
 }
 </style>
